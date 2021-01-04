@@ -1,0 +1,21 @@
+from statistics import median
+n = int(input())
+a = list(map(int, input().rstrip().split()))
+b = list(map(int, input().rstrip().split()))
+c = []
+for i in range(n):
+    f = [a[i]]*b[i]
+    c.append(f)
+c.sort()   
+t = int(len(c) /2 )      
+if len(c) % 2 == 0: 
+     L= c[:t]
+     U= c[t:]
+else:
+    L= c[:t]
+    U= c[t+1:]
+d = median(U)
+e = median(L)    
+y = d -e
+print(round(y,1) )   
+        
